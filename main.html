@@ -1,16 +1,90 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBookList</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <div class="container">
+        <h1>MyBookList</h1>
+        <div class="form-group">
+            <input type="text" id="title" placeholder="Book Title" class="form-control">
+            <input type="text" id="author" placeholder="Author" class="form-control">
+            <input type="text" id="isbn" placeholder="ISBN" class="form-control">
+            <button id="submit" class="btn btn-primary">Add Book</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN#</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+                <!-- Book entries will be added here -->
+				<tr>
+        <td>The Great Gatsby</td>
+        <td>F. Scott Fitzgerald</td>
+        <td>9780743273565</td>
+        <td><button class="delete btn btn-danger">Clear</button></td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>9780451524935</td>
+        <td><button class="delete btn btn-danger">Clear</button></td>
+    </tr>
+    <tr>
+        <td>To Kill a Mockingbird</td>
+        <td>Harper Lee</td>
+        <td>9780061120084</td>
+        <td><button class="delete btn btn-danger">Clear</button></td>
+    </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <script>
+        // JavaScript code will go here
+		document.getElementById("submit").addEventListener("click", function() {
+            // Capture input values
+            const title = document.getElementById("title").value;
+            const author = document.getElementById("author").value;
+            const isbn = document.getElementById("isbn").value;
+
+            // Check if inputs are not empty
+            if (title && author && isbn) {
+                // Create a new row
+                const newRow = document.createElement("tr");
+                
+                // Create cells and append to the row
+                newRow.innerHTML = `
+                    <td>${title}</td>
+                    <td>${author}</td>
+                    <td>${isbn}</td>
+                    <td><button class="delete btn btn-danger">Clear</button></td>
+                `;
+
+                // Append the new row to the table body
+                document.getElementById("book-list").appendChild(newRow);
+
+                // Clear the input fields
+                document.getElementById("title").value = '';
+                document.getElementById("author").value = '';
+                document.getElementById("isbn").value = '';
+
+                // Add event listener to the delete button
+                newRow.querySelector(".delete").addEventListener("click", function() {
+                    newRow.remove(); // Remove the row
+                });
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
 </body>
-
 </html>
