@@ -26,31 +26,30 @@
             </thead>
             <tbody id="book-list">
                 <!-- Book entries will be added here -->
-				<tr>
-        <td>The Great Gatsby</td>
-        <td>F. Scott Fitzgerald</td>
-        <td>9780743273565</td>
-        <td><button class="delete btn btn-danger">Clear</button></td>
-    </tr>
-    <tr>
-        <td>1984</td>
-        <td>George Orwell</td>
-        <td>9780451524935</td>
-        <td><button class="delete btn btn-danger">Clear</button></td>
-    </tr>
-    <tr>
-        <td>To Kill a Mockingbird</td>
-        <td>Harper Lee</td>
-        <td>9780061120084</td>
-        <td><button class="delete btn btn-danger">Clear</button></td>
-    </tr>
+                <tr>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>9780743273565</td>
+                    <td><button class="delete btn btn-danger">Clear</button></td>
+                </tr>
+                <tr>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>9780451524935</td>
+                    <td><button class="delete btn btn-danger">Clear</button></td>
+                </tr>
+                <tr>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>9780061120084</td>
+                    <td><button class="delete btn btn-danger">Clear</button></td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <script>
-        // JavaScript code will go here
-		document.getElementById("submit").addEventListener("click", function() {
+        document.getElementById("submit").addEventListener("click", function() {
             // Capture input values
             const title = document.getElementById("title").value;
             const author = document.getElementById("author").value;
