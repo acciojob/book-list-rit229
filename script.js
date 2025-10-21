@@ -1,9 +1,10 @@
 //your JS code here. If required.
-document.getElementById("submit").addEventListener("click", function() {
+document.getElementById("submit").addEventListener("click", function(e) {
 // Capture input values
-const title = document.getElementById("title").value;
-const author = document.getElementById("author").value;
-const isbn = document.getElementById("isbn").value;
+	e.preventDefault();
+const title = document.getElementById("title").value.trim();
+const author = document.getElementById("author").value.trim();
+const isbn = document.getElementById("isbn").value.trim();
 
 // Check if inputs are not empty
 if (title && author && isbn) {
