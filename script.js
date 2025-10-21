@@ -1,7 +1,6 @@
 //your JS code here. If required.
 document.getElementById("submit").addEventListener("click", function(e) {
 // Capture input values
-	e.preventDefault();
 const title = document.getElementById("title").value.trim();
 const author = document.getElementById("author").value.trim();
 const isbn = document.getElementById("isbn").value.trim();
