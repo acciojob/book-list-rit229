@@ -7,7 +7,11 @@ const author = document.getElementById("author").value.trim();
 const isbn = document.getElementById("isbn").value.trim();
 
 // Check if inputs are not empty
-if (title && author && isbn) {
+	if(!title || !author || !isbn){
+		alert("Please filll in all the details");
+		return;
+	}
+else {
 // Create a new row
 const newRow = document.createElement("tr");
                 
@@ -26,9 +30,7 @@ document.getElementById("book-list").appendChild(newRow);
 document.getElementById("title").value = '';
 document.getElementById("author").value = '';
 document.getElementById("isbn").value = '';
-} else {
-alert("Please fill in all fields.");
-}
+} 
 });
 
 // Event delegation for the delete button
